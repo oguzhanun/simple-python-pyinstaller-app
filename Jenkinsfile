@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent none
     stages{
         stage("build"){
             agent{
@@ -11,7 +11,7 @@ pipeline{
                 sh 'python -m py_compile sources/add2vals.py soruces/calc.py'
                 stash(name: 'compiled-results', includes: 'sources/*.py*')
 
-                
+
             }
         }
     }
